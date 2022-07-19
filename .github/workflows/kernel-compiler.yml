@@ -1,0 +1,517 @@
+name: Building New Kernel
+
+on: [push]
+
+env:
+  GIT_SECRETB: ${{ secrets.GIT_SECRETB }}
+  GIT_SECRET: ${{ secrets.GIT_SECRET }}
+  BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+  GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
+  ZIP_PASS: ${{ secrets.ZIP_PASS }}
+  TZ: Asia/Jakarta
+
+jobs:
+  build-lancelot-r-oss-test-uv4-almk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'lancelot-r-oss-test-uv4-almk'
+
+  build-lancelot-r-oss-test-uv4-slmk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'lancelot-r-oss-test-uv4-slmk'
+
+  build-lancelot-r-oss-test2-almk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'lancelot-r-oss-test2-almk'
+
+  build-lancelot-r-oss-test2-slmk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'lancelot-r-oss-test2-slmk'
+
+  build-lancelot-r-oss-test3-almk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'lancelot-r-oss-test3-almk'
+
+  build-lancelot-r-oss-test3-slmk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'lancelot-r-oss-test3-slmk'
+
+  build-lancelot-r-oss-test4-almk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'lancelot-r-oss-test4-almk'
+
+  build-lancelot-r-oss-test4-slmk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'lancelot-r-oss-test4-slmk'
+
+  build-merlin-r-oss-test-almk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'merlin-r-oss-test-almk'
+
+  build-merlin-r-oss-test-slmk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'merlin-r-oss-test-slmk'
+
+  build-merlin-r-oss-test-uv-almk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'merlin-r-oss-test-uv-almk'
+
+  build-merlin-r-oss-test-uv-slmk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'merlin-r-oss-test-uv-slmk'
+
+  build-merlin-r-oss-test-uv2-almk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'merlin-r-oss-test-uv2-almk'
+
+  build-merlin-r-oss-test-uv2-slmk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'merlin-r-oss-test-uv2-slmk'
+
+  build-merlin-r-oss-test-uv3-almk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'merlin-r-oss-test-uv3-almk'
+
+  build-merlin-r-oss-test-uv3-slmk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'merlin-r-oss-test-uv3-slmk'
+
+  build-merlin-r-oss-test-uv4-almk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'merlin-r-oss-test-uv4-almk'
+
+  build-merlin-r-oss-test-uv4-slmk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'merlin-r-oss-test-uv4-slmk'
+
+  build-merlin-r-oss-test2-almk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'merlin-r-oss-test2-almk'
+
+  build-merlin-r-oss-test2-slmk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'merlin-r-oss-test2-slmk'
+
+  build-merlin-r-oss-test3-almk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'merlin-r-oss-test3-almk'
+
+  build-merlin-r-oss-test3-slmk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'merlin-r-oss-test3-slmk'
+
+  build-merlin-r-oss-test4-almk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'merlin-r-oss-test4-almk'
+
+  build-merlin-r-oss-test4-slmk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'merlin-r-oss-test4-slmk'
+
