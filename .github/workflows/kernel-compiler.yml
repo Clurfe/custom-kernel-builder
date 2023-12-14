@@ -1,0 +1,181 @@
+name: Building New Kernel
+
+on: [push]
+
+env:
+  GIT_SECRETB: ${{ secrets.GIT_SECRETB }}
+  GIT_SECRET: ${{ secrets.GIT_SECRET }}
+  BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+  GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
+  ZIP_PASS: ${{ secrets.ZIP_PASS }}
+  TZ: Asia/Jakarta
+
+jobs:
+  build-begonia-r-oss-uv-slmk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-r-oss-uv-slmk'
+
+  build-begonia-r-oss-uv-almk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-r-oss-uv-almk'
+
+  build-begonia-r-oss-uv-b-slmk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-r-oss-uv-b-slmk'
+
+  build-begonia-r-oss-uv-b-alm:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-r-oss-uv-b-alm'
+
+  build-begonia-r-oss-std-slmk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-r-oss-std-slmk'
+
+  build-begonia-r-oss-std-almk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-r-oss-std-almk'
+
+  build-begonia-r-oss-std-b-slmk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-r-oss-std-b-slmk'
+
+  build-begonia-r-oss-std-b-almk:
+
+    runs-on: ubuntu-latest
+    container:
+      image: zycromerz/kerneldocker:v3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          bash misc/initialize.sh
+
+
+      - name: Compile Kernel
+        run: |
+          chmod +x maing.sh
+          bash maing.sh 'begonia-r-oss-std-b-almk'
+
