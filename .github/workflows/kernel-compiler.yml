@@ -1,0 +1,63 @@
+name: Building New Kernel
+
+on: [push]
+
+env:
+  GIT_SECRETB: ${{ secrets.GIT_SECRETB }}
+  GIT_SECRET: ${{ secrets.GIT_SECRET }}
+  BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+  GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
+  ZIP_PASS: ${{ secrets.ZIP_PASS }}
+  GL_N: ${{ secrets.GL_N }}
+  GL_S: ${{ secrets.GL_S }}
+  TZ: Asia/Jakarta
+  DEBIAN_FRONTEND: noninteractive
+
+jobs:
+  build:
+
+    defaults:
+      run:
+        shell: bash
+
+    timeout-minutes: 360
+
+    strategy:
+
+        fail-fast: false
+
+        matrix:
+          config:
+            # - file: blank
+            - file: 'begonia-r-oss-uv-b-slmk'
+
+    name: run-${{ matrix.config.file }}
+
+    runs-on: ubuntu-22.04
+
+    container:
+      image: zycromerz/kerneldocker:v4
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # - name: Cleanup Linux Enviroment
+      #   uses: ZyCromerZ/slimhub_actions@main
+
+      # - name: Configure Swap
+      #   uses: pierotofy/set-swap-space@master
+
+      - name: initialize
+        run: |
+          chmod +x misc/initialize.sh
+          ./misc/initialize.sh
+
+      - name: compile kernels
+        run: |
+          chmod +x maing.sh
+          ./maing.sh ${{ matrix.config.file }}
+
+      - name: remove everything
+        run: rm -rf ./*
